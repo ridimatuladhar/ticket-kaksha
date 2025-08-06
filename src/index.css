@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+
+
+
+
+
+@font-face {
+  font-family: 'Satisfy';
+  src: url("/fonts/Satisfy-Regular.ttf") format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Gotu";
+    src: url("/fonts/Gotu-Regular.ttf") format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "yeseva";
+    src: url("/fonts/YesevaOne-Regular.ttf") format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'opensans';
+  src: url("/fonts/OpenSans-VariableFont_wdth\,wght.ttf") format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+
+
+
+html {
+  scroll-behavior: smooth;
+}
