@@ -64,8 +64,8 @@ const AdminLogin = () => {
   await new Promise((resolve) => setTimeout(resolve, 2000));
 
   try {
-   //  const res = await fetch("http://localhost/TICKETKAKSHA/Backend/admin/admin_login.php", {
-     const res = await fetch("https://khemrajbahadurraut.com.np/Backend/admin/admin_login.php", {
+     const res = await fetch("http://localhost/TICKETKAKSHA/Backend/admin/admin_login.php", {
+    // const res = await fetch("https://khemrajbahadurraut.com.np/Backend/admin/admin_login.php", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ username, password }),

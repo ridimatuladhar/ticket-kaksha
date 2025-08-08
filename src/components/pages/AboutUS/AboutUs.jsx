@@ -7,8 +7,8 @@ const AboutUs = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
   const [isTransitioning, setIsTransitioning] = useState(false);
 
-  //const backendUrl = "http://localhost/TICKETKAKSHA/Backend/aboutus";
-  const backendUrl = "https://khemrajbahadurraut.com.np/Backend/aboutus";
+  const backendUrl = "http://localhost/TICKETKAKSHA/Backend/aboutus";
+  //const backendUrl = "https://khemrajbahadurraut.com.np/Backend/aboutus";
 
   useEffect(() => {
     fetch(`${backendUrl}/get_about_us.php`)

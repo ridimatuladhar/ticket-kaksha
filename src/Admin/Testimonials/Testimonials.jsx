@@ -3,17 +3,17 @@ import AddTestimonials from './AddTestimonials';
 import { FaSpinner, FaExclamationCircle, FaTrash, FaEdit } from 'react-icons/fa';
 import EditTestimonials from './EditTestimonials';
 
-// const API_URL = 'http://localhost/TICKETKAKSHA/Backend/testimonials/get_testimonials.php';
-// const UPDATE_URL = 'http://localhost/TICKETKAKSHA/Backend/testimonials/update_approval.php';
-// const ADD_URL = 'http://localhost/TICKETKAKSHA/Backend/testimonials/add_testimonials.php';
-// const DELETE_URL = 'http://localhost/TICKETKAKSHA/Backend/testimonials/delete_testimonials.php';
-// const IMAGE_BASE_URL = 'http://localhost/TICKETKAKSHA/Backend/testimonials/';
+const API_URL = 'http://localhost/TICKETKAKSHA/Backend/testimonials/get_testimonials.php';
+const UPDATE_URL = 'http://localhost/TICKETKAKSHA/Backend/testimonials/update_approval.php';
+const ADD_URL = 'http://localhost/TICKETKAKSHA/Backend/testimonials/add_testimonials.php';
+const DELETE_URL = 'http://localhost/TICKETKAKSHA/Backend/testimonials/delete_testimonials.php';
+const IMAGE_BASE_URL = 'http://localhost/TICKETKAKSHA/Backend/testimonials/';
 
-const API_URL = 'https://khemrajbahadurraut.com.np/Backend/testimonials/get_testimonials.php';
-const UPDATE_URL = 'https://khemrajbahadurraut.com.np/Backend/testimonials/update_approval.php';
-const ADD_URL = 'https://khemrajbahadurraut.com.np/Backend/testimonials/add_testimonials.php';
-const DELETE_URL = 'https://khemrajbahadurraut.com.np/Backend/testimonials/delete_testimonials.php';
-const IMAGE_BASE_URL = 'https://khemrajbahadurraut.com.np/Backend/testimonials/';
+// const API_URL = 'https://khemrajbahadurraut.com.np/Backend/testimonials/get_testimonials.php';
+// const UPDATE_URL = 'https://khemrajbahadurraut.com.np/Backend/testimonials/update_approval.php';
+// const ADD_URL = 'https://khemrajbahadurraut.com.np/Backend/testimonials/add_testimonials.php';
+// const DELETE_URL = 'https://khemrajbahadurraut.com.np/Backend/testimonials/delete_testimonials.php';
+// const IMAGE_BASE_URL = 'https://khemrajbahadurraut.com.np/Backend/testimonials/';
 
 const Testimonials = () => {
   const [testimonials, setTestimonials] = useState([]);
@@ -244,8 +244,8 @@ return (
           onClose={() => setEditData(null)}
           onSubmit={async (formData) => {
             try {
-             // const res = await fetch('http://localhost/TICKETKAKSHA/Backend/testimonials/edit_testimonials.php', {
-              const res = await fetch('https://khemrajbahadurraut.com.np/Backend/testimonials/edit_testimonials.php', {
+              const res = await fetch('http://localhost/TICKETKAKSHA/Backend/testimonials/edit_testimonials.php', {
+            //  const res = await fetch('https://khemrajbahadurraut.com.np/Backend/testimonials/edit_testimonials.php', {
                 method: 'POST',
                 body: formData,
               });

@@ -20,8 +20,8 @@ const EditTestimonials = ({ initialData, onSubmit, onClose }) => {
         comment: initialData.comment,
         imageFile: null,
         imagePreview: initialData.image
-        //  ? `http://localhost/TICKETKAKSHA/Backend/testimonials/${initialData.image}`
-          ? `https://khemrajbahadurraut.com.np/Backend/testimonials/${initialData.image}`
+          ? `http://localhost/TICKETKAKSHA/Backend/testimonials/${initialData.image}`
+        //  ? `https://khemrajbahadurraut.com.np/Backend/testimonials/${initialData.image}`
           : null,
       });
     }

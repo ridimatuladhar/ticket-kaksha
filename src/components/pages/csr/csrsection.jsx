@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import { MdTravelExplore } from "react-icons/md";
 import { createPortal } from "react-dom";
 
-//const IMAGE_BASE_URL = "http://localhost/TICKETKAKSHA/Backend/CSR/";
-const IMAGE_BASE_URL = "https://khemrajbahadurraut.com.np/Backend/CSR/";
+const IMAGE_BASE_URL = "http://localhost/TICKETKAKSHA/Backend/CSR/";
+//const IMAGE_BASE_URL = "https://khemrajbahadurraut.com.np/Backend/CSR/";
 
 const Modal = ({ title, description, image, onClose }) => {
   return createPortal(
@@ -51,33 +51,29 @@ const CsrCards = () => {
 
         // Add cache busting timestamp
         const timestamp = new Date().getTime();
-       //const sectionRes = await fetch(`http://localhost/TICKETKAKSHA/Backend/CSR/manage_csr_section.php?t=${timestamp}`);
-        const sectionRes = await fetch(`https://khemrajbahadurraut.com.np/Backend/CSR/manage_csr_section.php?t=${timestamp}`);
+       const sectionRes = await fetch(`http://localhost/TICKETKAKSHA/Backend/CSR/manage_csr_section.php?t=${timestamp}`);
+       // const sectionRes = await fetch(`https://khemrajbahadurraut.com.np/Backend/CSR/manage_csr_section.php?t=${timestamp}`);
         const sectionData = await sectionRes.json();
 
-        console.log('Section API response:', sectionData); // Debug log
 
         // FIX: Changed from is_enable to is_enabled (with 'd')
         if (sectionData.success && (sectionData.is_enabled === "1" || sectionData.is_enabled === 1 || sectionData.is_enabled === true)) {
           setIsSectionEnabled(true);
 
-        //  const csrRes = await fetch(`http://localhost/TICKETKAKSHA/Backend/CSR/get_csr.php?t=${timestamp}`);
-          const csrRes = await fetch(`https://khemrajbahadurraut.com.np/Backend/CSR/get_csr.php?t=${timestamp}`);
+        const csrRes = await fetch(`http://localhost/TICKETKAKSHA/Backend/CSR/get_csr.php?t=${timestamp}`);
+          //const csrRes = await fetch(`https://khemrajbahadurraut.com.np/Backend/CSR/get_csr.php?t=${timestamp}`);
           const csrJson = await csrRes.json();
 
-          console.log('CSR API response:', csrJson); // Debug log
 
           if (csrJson.success && csrJson.data) {
             const visibleCsrs = csrJson.data.filter(
               item => item.is_visible === "1" || item.is_visible === 1
             );
-            console.log('Filtered visible CSRs:', visibleCsrs); // Debug log
             setCsrData(visibleCsrs);
           } else {
             setError("Failed to load CSR data.");
           }
         } else {
-          console.log('Section is disabled or API failed:', sectionData); // Debug log
           setIsSectionEnabled(false);
         }
       } catch (err) {

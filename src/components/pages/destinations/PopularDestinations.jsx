@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { MdTravelExplore } from 'react-icons/md';
 
-//const API_URL = "http://localhost/TICKETKAKSHA/Backend/destination/get_destinations.php";
-const API_URL = "https://khemrajbahadurraut.com.np/Backend/destination/get_destinations.php";
+const API_URL = "http://localhost/TICKETKAKSHA/Backend/destination/get_destinations.php";
+//const API_URL = "https://khemrajbahadurraut.com.np/Backend/destination/get_destinations.php";
 
 const DestinationCard = ({ title, description, image, index }) => (
   <motion.div
@@ -115,8 +115,8 @@ const PopularDestinations = () => {
                 key={dest.id}
                 title={dest.title}
                 description={dest.description}
-               // image={`http://localhost/TICKETKAKSHA/Backend/destination/${dest.image_path}`}
-                image={`https://khemrajbahadurraut.com.np/Backend/destination/${dest.image_path}`}
+                image={`http://localhost/TICKETKAKSHA/Backend/destination/${dest.image_path}`}
+               // image={`https://khemrajbahadurraut.com.np/Backend/destination/${dest.image_path}`}
                 index={index}
               />
             ))}

@@ -49,8 +49,8 @@ const AdminPanel = () => {
 
   const handleLogout = async () => {
     try {
-      //const res = await fetch('http://localhost/TICKETKAKSHA/Backend/admin/admin_logout.php', {
-      const res = await fetch('https://khemrajbahadurraut.com.np/Backend/admin/admin_logout.php', {
+      const res = await fetch('http://localhost/TICKETKAKSHA/Backend/admin/admin_logout.php', {
+      //const res = await fetch('https://khemrajbahadurraut.com.np/Backend/admin/admin_logout.php', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
       });

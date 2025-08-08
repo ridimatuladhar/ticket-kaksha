@@ -44,8 +44,8 @@ const EditDestination = ({ destination, onClose, onUpdated }) => {
     }
 
     try {
-      //const res = await fetch('http://localhost/TICKETKAKSHA/Backend/destination/update_destination.php', {
-      const res = await fetch('https://khemrajbahadurraut.com.np/Backend/destination/update_destination.php', {
+      const res = await fetch('http://localhost/TICKETKAKSHA/Backend/destination/update_destination.php', {
+      //const res = await fetch('https://khemrajbahadurraut.com.np/Backend/destination/update_destination.php', {
         method: 'POST',
         body: formData,
       });
@@ -112,7 +112,7 @@ const EditDestination = ({ destination, onClose, onUpdated }) => {
                 onChange={handleChange}
                 rows="2"
                 className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none"
-                required
+                
                 placeholder="Enter destination description"
               />
             </div>
@@ -135,8 +135,8 @@ const EditDestination = ({ destination, onClose, onUpdated }) => {
                   src={
                     form.imageFile
                       ? form.imagePreview
-                    // : `http://localhost/TICKETKAKSHA/Backend/destination/${form.imagePreview}`
-                      : `https://khemrajbahadurraut.com.np/Backend/destination/${form.imagePreview}`
+                     : `http://localhost/TICKETKAKSHA/Backend/destination/${form.imagePreview}`
+                     // : `https://khemrajbahadurraut.com.np/Backend/destination/${form.imagePreview}`
                   }
                   alt="Preview"
                   className="h-32 object-cover rounded-lg"
