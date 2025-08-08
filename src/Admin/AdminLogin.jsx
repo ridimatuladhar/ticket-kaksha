@@ -65,7 +65,7 @@ const AdminLogin = () => {
 
   try {
    //  const res = await fetch("http://localhost/TICKETKAKSHA/Backend/admin/admin_login.php", {
-     const res = await fetch("https://khemrajbahadurraut.com.np/Backend/admin/admin_login.php", {
+     const res = await fetch("https://ticketkaksha.com.np/Backend/admin/admin_login.php", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ username, password }),

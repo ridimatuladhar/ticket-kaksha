@@ -43,7 +43,7 @@ const AddDestinations = ({ onClose, onSubmit }) => {
 
     try {
     //const res = await fetch('http://localhost/TICKETKAKSHA/Backend/destination/add_destination.php', {
-      const res = await fetch('https://khemrajbahadurraut.com.np/Backend/destination/add_destination.php', {
+      const res = await fetch('https://ticketkaksha.com.np/Backend/destination/add_destination.php', {
         method: 'POST',
         body: formData,
       });

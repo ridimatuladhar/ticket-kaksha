@@ -26,7 +26,7 @@ const Editcsr = ({ initialData, onSubmit, onClose }) => {
         imageFile: null,
         imagePreview: initialData.image
        // ? `http://localhost/TICKETKAKSHA/Backend/CSR/${initialData.image}`
-          ? `https://khemrajbahadurraut.com.np/Backend/CSR/${initialData.image}`
+          ? `https://ticketkaksha.com.np/Backend/CSR/${initialData.image}`
           : null,
       });
     }

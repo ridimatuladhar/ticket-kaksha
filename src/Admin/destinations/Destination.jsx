@@ -6,8 +6,8 @@ import AddDestinations from './AddDestinations';
 // const API_URL = 'http://localhost/TICKETKAKSHA/Backend/destination/get_destinations.php';
 // const IMAGE_BASE_URL = 'http://localhost/TICKETKAKSHA/Backend/destination/';
 
-const API_URL = 'https://khemrajbahadurraut.com.np/Backend/destination/get_destinations.php';
-const IMAGE_BASE_URL = 'https://khemrajbahadurraut.com.np/Backend/destination/';
+const API_URL = 'https://ticketkaksha.com.np/Backend/destination/get_destinations.php';
+const IMAGE_BASE_URL = 'https://ticketkaksha.com.np/Backend/destination/';
 
 const Destination = () => {
   const [destinations, setDestinations] = useState([]);
@@ -49,7 +49,7 @@ const Destination = () => {
     if (window.confirm('Are you sure you want to delete this destination?')) {
       try {
       //  const res = await fetch('http://localhost/TICKETKAKSHA/Backend/destination/delete_destination.php', {
-        const res = await fetch('https://khemrajbahadurraut.com.np/Backend/destination/delete_destination.php', {
+        const res = await fetch('https://ticketkaksha.com.np/Backend/destination/delete_destination.php', {
           method: 'DELETE',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ id }),
@@ -69,7 +69,7 @@ const Destination = () => {
   const handleAddDestination = async formData => {
     try {
      // const res = await fetch('http://localhost/TICKETKAKSHA/Backend/destination/add_destination.php', {
-      const res = await fetch('https://khemrajbahadurraut.com.np/Backend/destination/add_destination.php', {
+      const res = await fetch('https://ticketkaksha.com.np/Backend/destination/add_destination.php', {
         method: 'POST',
         body: formData,
       });

@@ -21,7 +21,7 @@ const EditTestimonials = ({ initialData, onSubmit, onClose }) => {
         imageFile: null,
         imagePreview: initialData.image
         //  ? `http://localhost/TICKETKAKSHA/Backend/testimonials/${initialData.image}`
-          ? `https://khemrajbahadurraut.com.np/Backend/testimonials/${initialData.image}`
+          ? `https://ticketkaksha.com.np/Backend/testimonials/${initialData.image}`
           : null,
       });
     }

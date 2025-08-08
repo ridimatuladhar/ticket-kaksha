@@ -11,13 +11,13 @@ import Editcsr from './Editcsr';
 // const SECTION_STATUS_URL = 'http://localhost/TICKETKAKSHA/Backend/CSR/manage_csr_section.php';
 // const TOGGLE_SECTION_URL = 'http://localhost/TICKETKAKSHA/Backend/CSR/toggle_csr_section.php';
 
-const API_URL = 'https://khemrajbahadurraut.com.np/Backend/CSR/get_csr.php';
-const UPDATE_URL = 'https://khemrajbahadurraut.com.np/Backend/CSR/update_csr.php';
-const ADD_URL = 'https://khemrajbahadurraut.com.np/Backend/CSR/add_csr.php';
-const DELETE_URL = 'https://khemrajbahadurraut.com.np/Backend/CSR/delete_csr.php';
-const IMAGE_BASE_URL = 'https://khemrajbahadurraut.com.np/Backend/CSR/';
-const SECTION_STATUS_URL = 'https://khemrajbahadurraut.com.np/Backend/CSR/manage_csr_section.php';
-const TOGGLE_SECTION_URL = 'https://khemrajbahadurraut.com.np/Backend/CSR/toggle_csr_section.php';
+const API_URL = 'https://ticketkaksha.com.np/Backend/CSR/get_csr.php';
+const UPDATE_URL = 'https://ticketkaksha.com.np/Backend/CSR/update_csr.php';
+const ADD_URL = 'https://ticketkaksha.com.np/Backend/CSR/add_csr.php';
+const DELETE_URL = 'https://ticketkaksha.com.np/Backend/CSR/delete_csr.php';
+const IMAGE_BASE_URL = 'https://ticketkaksha.com.np/Backend/CSR/';
+const SECTION_STATUS_URL = 'https://ticketkaksha.com.np/Backend/CSR/manage_csr_section.php';
+const TOGGLE_SECTION_URL = 'https://ticketkaksha.com.np/Backend/CSR/toggle_csr_section.php';
 
 const CsrPanel = () => {
   const [csrs, setCsrs] = useState([]);

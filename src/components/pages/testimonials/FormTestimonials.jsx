@@ -137,7 +137,7 @@ const FormTestimonials = () => {
 
   try {
     //const response = await fetch('http://localhost/TICKETKAKSHA/Backend/testimonials/add_testimonials.php', {
-    const response = await fetch('https://khemrajbahadurraut.com.np/Backend/testimonials/add_testimonials.php', {
+    const response = await fetch('https://ticketkaksha.com.np/Backend/testimonials/add_testimonials.php', {
       method: 'POST',
       body: data
     });

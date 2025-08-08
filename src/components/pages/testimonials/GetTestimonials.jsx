@@ -6,8 +6,8 @@ import { FaTimes } from 'react-icons/fa';
 // const IMAGE_BASE_URL = "http://localhost/TICKETKAKSHA/Backend/testimonials/";
 
 
-const API_URL = "https://khemrajbahadurraut.com.np/Backend/testimonials/get_testimonials.php";
-const IMAGE_BASE_URL = "https://khemrajbahadurraut.com.np/Backend/testimonials/";
+const API_URL = "https://ticketkaksha.com.np/Backend/testimonials/get_testimonials.php";
+const IMAGE_BASE_URL = "https://ticketkaksha.com.np/Backend/testimonials/";
 
 const GetTestimonials = () => {
   const [testimonials, setTestimonials] = useState([]);

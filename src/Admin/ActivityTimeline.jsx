@@ -29,7 +29,7 @@ const ActivityTimeline = () => {
     const fetchActivities = async () => {
       try {
       // const response = await fetch("http://localhost/TICKETKAKSHA/Backend/admin/get_activity_log.php");
-        const response = await fetch("https://khemrajbahadurraut.com.np/Backend/admin/get_activity_log.php");
+        const response = await fetch("https://ticketkaksha.com.np/Backend/admin/get_activity_log.php");
         if (!response.ok) throw new Error('Network response was not ok');
 
         const data = await response.json();

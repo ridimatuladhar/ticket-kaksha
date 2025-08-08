@@ -30,7 +30,7 @@ const Contacts = () => {
       setLoading(true);
       setError(null);
      // const response = await fetch('http://localhost/TICKETKAKSHA/Backend/contact/get_contact.php');
-      const response = await fetch('https://khemrajbahadurraut.com.np/Backend/contact/get_contact.php');
+      const response = await fetch('https://ticketkaksha.com.np/Backend/contact/get_contact.php');
       const data = await response.json();
 
       if (data.success) {
