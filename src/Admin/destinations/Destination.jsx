@@ -3,11 +3,9 @@ import EditDestination from './EditDestinations';
 import { FaEdit, FaTrash, FaSpinner, FaExclamationCircle } from 'react-icons/fa';
 import AddDestinations from './AddDestinations';
 
-// const API_URL = 'http://localhost/TICKETKAKSHA/Backend/destination/get_destinations.php';
-// const IMAGE_BASE_URL = 'http://localhost/TICKETKAKSHA/Backend/destination/';
+const API_URL = 'http://localhost/TICKETKAKSHA/Backend/destination/get_destinations.php';
+const IMAGE_BASE_URL = 'http://localhost/TICKETKAKSHA/Backend/destination/';
 
-const API_URL = 'https://ticketkaksha.com.np/Backend/destination/get_destinations.php';
-const IMAGE_BASE_URL = 'https://ticketkaksha.com.np/Backend/destination/';
 
 const Destination = () => {
   const [destinations, setDestinations] = useState([]);

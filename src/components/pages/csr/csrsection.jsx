@@ -55,7 +55,6 @@ const CsrCards = () => {
         const sectionRes = await fetch(`https://ticketkaksha.com.np/Backend/CSR/manage_csr_section.php?t=${timestamp}`);
         const sectionData = await sectionRes.json();
 
-        console.log('Section API response:', sectionData); // Debug log
 
         // FIX: Changed from is_enable to is_enabled (with 'd')
         if (sectionData.success && (sectionData.is_enabled === "1" || sectionData.is_enabled === 1 || sectionData.is_enabled === true)) {
@@ -65,19 +64,16 @@ const CsrCards = () => {
           const csrRes = await fetch(`https://ticketkaksha.com.np/Backend/CSR/get_csr.php?t=${timestamp}`);
           const csrJson = await csrRes.json();
 
-          console.log('CSR API response:', csrJson); // Debug log
 
           if (csrJson.success && csrJson.data) {
             const visibleCsrs = csrJson.data.filter(
               item => item.is_visible === "1" || item.is_visible === 1
             );
-            console.log('Filtered visible CSRs:', visibleCsrs); // Debug log
             setCsrData(visibleCsrs);
           } else {
             setError("Failed to load CSR data.");
           }
         } else {
-          console.log('Section is disabled or API failed:', sectionData); // Debug log
           setIsSectionEnabled(false);
         }
       } catch (err) {
