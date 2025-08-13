@@ -36,6 +36,9 @@ const ContactForm = () => {
     message: false
   });
 
+  const [loading, setLoading] = useState(false);
+
+
   // Realtime validation
   useEffect(() => {
     if (touched.name) validateField('name', formData.name);
@@ -174,7 +177,7 @@ const ContactForm = () => {
     return isValid;
   };
 
-  const handleSubmit = async (e) => {
+ const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (!validateForm()) {
@@ -186,9 +189,10 @@ const ContactForm = () => {
 
     if (!isConfirmed) return;
 
+    setLoading(true); 
+
     try {
       const response = await fetch('http://localhost/TICKETKAKSHA/Backend/contact/submit_contact.php', {
-      //const response = await fetch('https://khemrajbahadurraut.com.np/Backend/contact/submit_contact.php', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
@@ -207,6 +211,8 @@ const ContactForm = () => {
     } catch (error) {
       console.error('Error:', error);
       showErrorToast('Network error. Please try again.');
+    } finally {
+      setLoading(false); // <-- re-enable button here
     }
   };
 
@@ -286,12 +292,14 @@ const ContactForm = () => {
           )}
         </div>
 
-        <div className="text-center pt-4">
+          <div className="text-center pt-4">
           <button
             type="submit"
-            className="bg-[#2F8DCC] text-white px-6 py-2 rounded-full hover:bg-blue-700 transition duration-300"
+            disabled={loading}  
+            className={`bg-[#2F8DCC] text-white px-6 py-2 rounded-full hover:bg-blue-700 transition duration-300
+              ${loading ? 'opacity-50 cursor-not-allowed' : ''}`}
           >
-            Send a message
+            {loading ? 'Sending...' : 'Send a message'}
           </button>
         </div>
       </form>

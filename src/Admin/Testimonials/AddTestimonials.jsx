@@ -29,22 +29,36 @@ const AddTestimonials = ({ onClose, onSubmit }) => {
   const handleSubmit = async e => {
     e.preventDefault();
     setLoading(true);
+    setMsg('');
 
     const formData = new FormData();
     formData.append('name', form.name);
     formData.append('comment', form.comment);
+    formData.append('is_admin', '1'); // Flag this as admin submission
     if (form.imageFile) {
       formData.append('image', form.imageFile);
     }
 
     try {
-      await onSubmit(formData);
-      onClose(); // Close modal after successful submit
-    } catch (error) {
-      setMsg('Something went wrong. Please try again.');
-    }
+      const response = await fetch('http://localhost/TICKETKAKSHA/Backend/testimonials/add_testimonials.php', {
+        method: 'POST',
+        body: formData
+      });
 
-    setLoading(false);
+      const result = await response.json();
+
+      if (result.success) {
+        onSubmit(); // Refresh testimonials list
+        onClose(); // Close modal
+      } else {
+        setMsg(result.message || 'Submission failed. Please try again.');
+      }
+    } catch (error) {
+      setMsg('Network error. Please try again.');
+      console.error('Submission error:', error);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -54,7 +68,7 @@ const AddTestimonials = ({ onClose, onSubmit }) => {
           onClick={onClose}
           className="absolute top-3 right-4 text-2xl text-gray-400 hover:text-gray-600"
         >
-         <FaTimes />
+          <FaTimes />
         </button>
 
         <h2 className="text-2xl font-bold mb-6 text-[#2E6FB7]">Add Testimonial</h2>
@@ -75,7 +89,7 @@ const AddTestimonials = ({ onClose, onSubmit }) => {
               onChange={handleChange}
               className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none"
               required
-              placeholder="Enter your name"
+              placeholder="Enter name"
             />
           </div>
 
@@ -85,10 +99,10 @@ const AddTestimonials = ({ onClose, onSubmit }) => {
               name="comment"
               value={form.comment}
               onChange={handleChange}
-              rows="2"
+              rows="4"
               className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none"
               required
-              placeholder="Enter your feedback"
+              placeholder="Enter testimonial content"
             />
           </div>
 
@@ -98,7 +112,6 @@ const AddTestimonials = ({ onClose, onSubmit }) => {
               type="file"
               name="image"
               accept="image/*"
-              required
               onChange={handleChange}
               className="block w-full text-sm text-gray-600 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-100 file:text-blue-700 hover:file:bg-blue-200"
             />
@@ -115,13 +128,32 @@ const AddTestimonials = ({ onClose, onSubmit }) => {
             </div>
           )}
 
-          <button
-            type="submit"
-            className={`w-full py-2 px-4 text-white font-semibold rounded-lg transition-colors ${loading ? 'bg-[#245da3]' : 'bg-[#245da3] hover:bg-[#3a7dc4]'}`}
-            disabled={loading}
-          >
-            {loading ? 'Submitting...' : 'Submit'}
-          </button>
+          <div className="flex justify-end space-x-3 pt-2">
+            <button
+              type="button"
+              onClick={onClose}
+              className="px-4 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 transition-colors"
+              disabled={loading}
+            >
+              Cancel
+            </button>
+            <button
+              type="submit"
+              className={`px-4 py-2 text-white font-semibold rounded-lg transition-colors ${
+                loading ? 'bg-blue-400' : 'bg-blue-600 hover:bg-blue-700'
+              }`}
+              disabled={loading}
+            >
+              {loading ? (
+                <>
+                  <span className="inline-block animate-spin mr-2">↻</span>
+                  Submitting...
+                </>
+              ) : (
+                'Submit Testimonial'
+              )}
+            </button>
+          </div>
         </form>
       </div>
     </div>

@@ -25,11 +25,11 @@ const FormTestimonials = () => {
   });
 
   // Real-time validation
-  useEffect(() => {
-    validateField('name', formData.name);
-    validateField('comment', formData.comment);
-    validateField('image', formData.image);
-  }, [formData]);
+  // useEffect(() => {
+  //   validateField('name', formData.name);
+  //   validateField('comment', formData.comment);
+  //   validateField('image', formData.image);
+  // }, [formData]);
 
   // Cleanup preview URL
   useEffect(() => {
@@ -40,33 +40,43 @@ const FormTestimonials = () => {
     };
   }, [formData.imagePreview]);
 
-  const handleChange = (e) => {
-    const { id, value, files } = e.target;
+const handleChange = (e) => {
+  const { id, value, files } = e.target;
 
-    if (id === 'image') {
-      const file = files[0];
-      if (file && !file.type.startsWith('image/')) {
-        setErrors(prev => ({ ...prev, image: 'Only image files are allowed' }));
-        return;
-      }
-
-      const preview = file ? URL.createObjectURL(file) : null;
-      setFormData(prev => ({
-        ...prev,
-        image: file,
-        imagePreview: preview
-      }));
-    } else {
-      setFormData(prev => ({ ...prev, [id]: value }));
+  if (id === 'image') {
+    const file = files[0];
+    if (file && !file.type.startsWith('image/')) {
+      setErrors(prev => ({ ...prev, image: 'Only image files are allowed' }));
+      return;
     }
 
-    setTouched(prev => ({ ...prev, [id]: true }));
-  };
+    const preview = file ? URL.createObjectURL(file) : null;
+    setFormData(prev => ({
+      ...prev,
+      image: file,
+      imagePreview: preview
+    }));
 
-  const handleBlur = (e) => {
-    const { id } = e.target;
+    setTouched(prev => ({ ...prev, image: true }));
+    // Validate image only if touched
+    validateField('image', file);
+  } else {
+    setFormData(prev => ({ ...prev, [id]: value }));
     setTouched(prev => ({ ...prev, [id]: true }));
-  };
+
+    // Validate field only if touched
+    validateField(id, value);
+  }
+};
+
+const handleBlur = (e) => {
+  const { id } = e.target;
+  setTouched(prev => ({ ...prev, [id]: true }));
+
+  // Validate on blur too, to catch errors if user leaves field empty
+  validateField(id, id === 'image' ? formData.image : formData[id]);
+};
+
 
   const validateField = (field, value) => {
     let error = '';
@@ -247,12 +257,16 @@ const FormTestimonials = () => {
 
         {/* Submit Button */}
         <div className="text-center">
-          <button
-            type="submit"
-            className="bg-[#2F8DCC] text-white px-6 py-2 rounded-full hover:bg-blue-700 transition duration-300"
-          >
-            Submit
-          </button>
+         <button
+  type="submit"
+  disabled={isSubmitting}
+  className={`bg-[#2F8DCC] text-white px-6 py-2 rounded-full hover:bg-blue-700 transition duration-300 
+    ${isSubmitting ? 'opacity-50 cursor-not-allowed' : 'hover:bg-blue-700'}`}
+>
+  {isSubmitting ? 'Submitting...' : 'Submit'}
+</button>
+
+
         </div>
       </form>
     </div>

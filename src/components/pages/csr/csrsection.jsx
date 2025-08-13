@@ -99,7 +99,6 @@ const CsrCards = () => {
 
   // Don't render anything if section is disabled
   if (!isSectionEnabled) {
-    console.log('CSR section is disabled, not rendering'); // Debug log
     return null;
   }
 
