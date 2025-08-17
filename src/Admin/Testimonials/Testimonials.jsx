@@ -58,23 +58,9 @@ const Testimonials = () => {
       console.error('Update error:', err);
     }
   };
-  const handleAddTestimonial = async formData => {
-    try {
-      const res = await fetch(ADD_URL, {
-        method: 'POST',
-        body: formData,
-      });
-      const result = await res.json();
-      if (result.success) {
-        setShowModal(false);
-        fetchTestimonials();
-      } else {
-        alert('Failed to add testimonial.');
-      }
-    } catch (error) {
-      console.error('Add error:', error);
-    }
-  };
+ const handleAddTestimonial = () => {
+  fetchTestimonials();
+};
 
 const handleDelete = async (id) => {
   if (!window.confirm('Are you sure you want to delete this testimonial?')) return;
