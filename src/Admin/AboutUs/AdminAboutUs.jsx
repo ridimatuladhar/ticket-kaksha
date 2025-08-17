@@ -14,8 +14,6 @@ const AdminAboutUs = () => {
 
 
   const backendBase = "http://localhost/TICKETKAKSHA/Backend/aboutus";
-  //const backendBase = "https://khemrajbahadurraut.com.np/Backend/aboutus";
-  //const backendBase = "http://localhost/TICKETKAKSHA/Backend/aboutus";
   // const backendBase = "https://ticketkaksha.com.np/Backend/aboutus";
 
 
@@ -306,8 +304,6 @@ const handleFileChange = (e) => {
               >
                 <img
                   src={`http://localhost/TICKETKAKSHA/Backend/aboutus/${img}`}
-                 // src={`https://khemrajbahadurraut.com.np/Backend/aboutus/${img}`}
-                 // src={`http://localhost/TICKETKAKSHA/Backend/aboutus/${img}`}
                   // src={`https://ticketkaksha.com.np/Backend/aboutus/${img}`}
                   alt={`About Us Image ${index + 1}`}
                   className="w-full h-full object-cover"

@@ -136,13 +136,8 @@ const FormTestimonials = () => {
   data.append('image', formData.image);
 
   try {
-<<<<<<< HEAD
     //const response = await fetch('http://localhost/TICKETKAKSHA/Backend/testimonials/add_testimonials.php', {
     const response = await fetch('https://ticketkaksha.com.np/Backend/testimonials/add_testimonials.php', {
-=======
-    const response = await fetch('http://localhost/TICKETKAKSHA/Backend/testimonials/add_testimonials.php', {
-    //const response = await fetch('https://khemrajbahadurraut.com.np/Backend/testimonials/add_testimonials.php', {
->>>>>>> f51d0480546693e17753cadb51bc8a375850515b
       method: 'POST',
       body: data
     });
