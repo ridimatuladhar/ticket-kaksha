@@ -27,8 +27,8 @@ const Nav = () => {
   useEffect(() => {
     const fetchCsrVisibility = async () => {
       try {
-       // const res = await fetch("http://localhost/TICKETKAKSHA/Backend/CSR/manage_csr_section.php");
-        const res = await fetch("https://ticketkaksha.com.np/Backend/CSR/manage_csr_section.php");
+        const res = await fetch("http://localhost/TICKETKAKSHA/Backend/CSR/manage_csr_section.php");
+        //const res = await fetch("https://ticketkaksha.com.np/Backend/CSR/manage_csr_section.php");
         const data = await res.json();
        if (data.success && (data.is_enabled === "1" || data.is_enabled === 1)){
 

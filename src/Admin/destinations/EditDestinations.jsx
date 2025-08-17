@@ -44,8 +44,8 @@ const EditDestination = ({ destination, onClose, onUpdated }) => {
     }
 
     try {
-      //const res = await fetch('http://localhost/TICKETKAKSHA/Backend/destination/update_destination.php', {
-      const res = await fetch('https://ticketkaksha.com.np/Backend/destination/update_destination.php', {
+     const res = await fetch('http://localhost/TICKETKAKSHA/Backend/destination/update_destination.php', {
+     // const res = await fetch('https://ticketkaksha.com.np/Backend/destination/update_destination.php', {
         method: 'POST',
         body: formData,
       });
@@ -135,8 +135,8 @@ const EditDestination = ({ destination, onClose, onUpdated }) => {
                   src={
                     form.imageFile
                       ? form.imagePreview
-                    // : `http://localhost/TICKETKAKSHA/Backend/destination/${form.imagePreview}`
-                      : `https://ticketkaksha.com.np/Backend/destination/${form.imagePreview}`
+                     : `http://localhost/TICKETKAKSHA/Backend/destination/${form.imagePreview}`
+                    //  : `https://ticketkaksha.com.np/Backend/destination/${form.imagePreview}`
                   }
                   alt="Preview"
                   className="h-32 object-cover rounded-lg"

@@ -192,8 +192,8 @@ const ContactForm = () => {
     setLoading(true); 
 
     try {
-      //const response = await fetch('http://localhost/TICKETKAKSHA/Backend/contact/submit_contact.php', {
-      const response = await fetch('https://ticketkaksha.com.np/Backend/contact/submit_contact.php', {
+      const response = await fetch('http://localhost/TICKETKAKSHA/Backend/contact/submit_contact.php', {
+      //const response = await fetch('https://ticketkaksha.com.np/Backend/contact/submit_contact.php', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),

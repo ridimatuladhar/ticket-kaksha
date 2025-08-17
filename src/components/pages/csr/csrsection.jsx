@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import { MdTravelExplore } from "react-icons/md";
 import { createPortal } from "react-dom";
 
-//const IMAGE_BASE_URL = "http://localhost/TICKETKAKSHA/Backend/CSR/";
-const IMAGE_BASE_URL = "https://ticketkaksha.com.np/Backend/CSR/";
+const IMAGE_BASE_URL = "http://localhost/TICKETKAKSHA/Backend/CSR/";
+//const IMAGE_BASE_URL = "https://ticketkaksha.com.np/Backend/CSR/";
 
 const Modal = ({ title, description, image, onClose }) => {
   return createPortal(
@@ -51,8 +51,8 @@ const CsrCards = () => {
 
         // Add cache busting timestamp
         const timestamp = new Date().getTime();
-       //const sectionRes = await fetch(`http://localhost/TICKETKAKSHA/Backend/CSR/manage_csr_section.php?t=${timestamp}`);
-        const sectionRes = await fetch(`https://ticketkaksha.com.np/Backend/CSR/manage_csr_section.php?t=${timestamp}`);
+       const sectionRes = await fetch(`http://localhost/TICKETKAKSHA/Backend/CSR/manage_csr_section.php?t=${timestamp}`);
+        //const sectionRes = await fetch(`https://ticketkaksha.com.np/Backend/CSR/manage_csr_section.php?t=${timestamp}`);
         const sectionData = await sectionRes.json();
 
 
@@ -60,8 +60,8 @@ const CsrCards = () => {
         if (sectionData.success && (sectionData.is_enabled === "1" || sectionData.is_enabled === 1 || sectionData.is_enabled === true)) {
           setIsSectionEnabled(true);
 
-        //  const csrRes = await fetch(`http://localhost/TICKETKAKSHA/Backend/CSR/get_csr.php?t=${timestamp}`);
-          const csrRes = await fetch(`https://ticketkaksha.com.np/Backend/CSR/get_csr.php?t=${timestamp}`);
+         const csrRes = await fetch(`http://localhost/TICKETKAKSHA/Backend/CSR/get_csr.php?t=${timestamp}`);
+         // const csrRes = await fetch(`https://ticketkaksha.com.np/Backend/CSR/get_csr.php?t=${timestamp}`);
           const csrJson = await csrRes.json();
 
 
