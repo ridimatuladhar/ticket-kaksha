@@ -81,21 +81,20 @@ const Nav = () => {
             className="w-full h-full object-contain transition-transform duration-700 hover:scale-105"
             title="Ticket Kaksha Logo"
           />
-
         </div>
-          {/* Inline Text on scroll */}
-          <span
-            className={` absolute  left-15 transition-transform duration-900 ease-in-out origin-left whitespace-nowrap
+        {/* Inline Text on scroll */}
+        <span
+          className={` absolute  left-15 top-7 md:top-5 transition-transform duration-900 ease-in-out origin-left whitespace-nowrap
       text-[#3258a7] font-semibold text-sm md:text-base
       ${
         isScrolled
           ? "opacity-100 scale-100 translate-x-0"
           : "opacity-0 scale-95  pointer-events-none"
       }`}
-          >
-            <span style={{ fontFamily: "gotu" }}>टिकट</span>{" "}
-            <span style={{ fontFamily: "gotu" }}>कक्ष</span>
-          </span>
+        >
+          <span style={{ fontFamily: "gotu" }}>टिकट</span>{" "}
+          <span style={{ fontFamily: "gotu" }}>कक्ष</span>
+        </span>
 
         {/* Hamburger Menu */}
         <div className="md:hidden  absolute top-6 right-4 z-50">
