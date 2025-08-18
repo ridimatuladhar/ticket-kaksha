@@ -8,8 +8,8 @@ const AboutUs = () => {
   const intervalRef = useRef(null);
   const containerRef = useRef(null);
 
-  const backendUrl = "http://localhost/TICKETKAKSHA/Backend/aboutus";
-  // const backendUrl = "https://ticketkaksha.com.np/Backend/aboutus";
+  //const backendUrl = "http://localhost/TICKETKAKSHA/Backend/aboutus";
+   const backendUrl = "https://ticketkaksha.com.np/Backend/aboutus";
 
   useEffect(() => {
     fetch(`${backendUrl}/get_about_us.php`)

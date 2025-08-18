@@ -1,9 +1,14 @@
 import React, { useEffect, useState } from "react";
 import FormTestimonials from "./FormTestimonials";
 import { FaTimes } from 'react-icons/fa';
+import placeholderImg from '../../../assets/placeholder.png'; // adjust path as needed
 
-const API_URL = "http://localhost/TICKETKAKSHA/Backend/testimonials/get_testimonials.php";
-const IMAGE_BASE_URL = "http://localhost/TICKETKAKSHA/Backend/testimonials/";
+// const API_URL = "http://localhost/TICKETKAKSHA/Backend/testimonials/get_testimonials.php";
+// const IMAGE_BASE_URL = "http://localhost/TICKETKAKSHA/Backend/testimonials/";
+
+const API_URL = "https://ticketkaksha.com.np/Backend/testimonials/get_testimonials.php";
+const IMAGE_BASE_URL = "https://ticketkaksha.com.np/Backend/testimonials/";
+
 
 const GetTestimonials = () => {
   const [testimonials, setTestimonials] = useState([]);
@@ -57,12 +62,13 @@ const GetTestimonials = () => {
             >
               <p className="text-gray-700 text-md mb-6 leading-relaxed">"{item.comment}"</p>
               <div className="flex items-center gap-3">
-                <img
-                  src={item.image ? (item.image.startsWith("http") ? item.image : IMAGE_BASE_URL + item.image) : "https://via.placeholder.com/40"}
-                  alt="Testimonial"
-                  title="Testimonial Image"
-                  className="w-10 h-10 rounded-full object-cover"
-                />
+               <img
+  src={item.image ? (item.image.startsWith("http") ? item.image : IMAGE_BASE_URL + item.image) : placeholderImg}
+  alt="Testimonial"
+  title="Testimonial Image"
+  className="w-10 h-10 rounded-full object-cover"
+/>
+
                 <p className="text-gray-500 text-sm">{item.name}</p>
               </div>
             </div>
@@ -80,12 +86,13 @@ const GetTestimonials = () => {
             >
               <p className="text-gray-700 text-md mb-6 leading-relaxed">"{item.comment}"</p>
               <div className="flex items-center gap-3">
-                <img
-                  src={item.image ? (item.image.startsWith("http") ? item.image : IMAGE_BASE_URL + item.image) : "https://via.placeholder.com/40"}
-                  alt={item.name}
-                  title="Testimonial Image"
-                  className="w-10 h-10 rounded-full object-cover"
-                />
+               <img
+  src={item.image ? (item.image.startsWith("http") ? item.image : IMAGE_BASE_URL + item.image) : placeholderImg}
+  alt="Testimonial"
+  title="Testimonial Image"
+  className="w-10 h-10 rounded-full object-cover"
+/>
+
                 <p className="text-gray-500 text-sm">{item.name}</p>
               </div>
             </div>

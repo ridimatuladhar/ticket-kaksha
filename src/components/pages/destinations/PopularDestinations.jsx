@@ -115,7 +115,7 @@ const PopularDestinations = () => {
                 key={dest.id}
                 title={dest.title}
                 description={dest.description}
-               // image={`http://localhost/TICKETKAKSHA/Backend/destination/${dest.image_path}`}
+              // image={`http://localhost/TICKETKAKSHA/Backend/destination/${dest.image_path}`}
                 image={`https://ticketkaksha.com.np/Backend/destination/${dest.image_path}`}
                 index={index}
               />

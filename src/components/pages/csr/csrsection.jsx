@@ -60,7 +60,7 @@ const CsrCards = () => {
         if (sectionData.success && (sectionData.is_enabled === "1" || sectionData.is_enabled === 1 || sectionData.is_enabled === true)) {
           setIsSectionEnabled(true);
 
-        //  const csrRes = await fetch(`http://localhost/TICKETKAKSHA/Backend/CSR/get_csr.php?t=${timestamp}`);
+        // const csrRes = await fetch(`http://localhost/TICKETKAKSHA/Backend/CSR/get_csr.php?t=${timestamp}`);
           const csrRes = await fetch(`https://ticketkaksha.com.np/Backend/CSR/get_csr.php?t=${timestamp}`);
           const csrJson = await csrRes.json();
 
