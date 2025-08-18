@@ -27,8 +27,8 @@ const Nav = () => {
   useEffect(() => {
     const fetchCsrVisibility = async () => {
       try {
-        const res = await fetch("http://localhost/TICKETKAKSHA/Backend/CSR/manage_csr_section.php");
-        //const res = await fetch("https://ticketkaksha.com.np/Backend/CSR/manage_csr_section.php");
+        //const res = await fetch("http://localhost/TICKETKAKSHA/Backend/CSR/manage_csr_section.php");
+        const res = await fetch("https://ticketkaksha.com.np/Backend/CSR/manage_csr_section.php");
         const data = await res.json();
         if (
           data.success &&
@@ -83,17 +83,18 @@ const Nav = () => {
         </div>
           {/* Inline Text on scroll */}
           <span
-            className={` absolute  left-15 transition-transform duration-900 ease-in-out origin-left whitespace-nowrap
+          className={` absolute  left-15 top-7 md:top-5 transition-transform duration-900 ease-in-out origin-left whitespace-nowrap
       text-[#3258a7] font-semibold text-sm md:text-base
       ${
         isScrolled
           ? "opacity-100 scale-100 translate-x-0"
           : "opacity-0 scale-95  pointer-events-none"
       }`}
-          >
-            <span style={{ fontFamily: "gotu" }}>टिकट</span>{" "}
-            <span style={{ fontFamily: "gotu" }}>कक्ष</span>
-          </span>
+        >
+          <span style={{ fontFamily: "gotu" }}>टिकट</span>{" "}
+          <span style={{ fontFamily: "gotu" }}>कक्ष</span>
+
+</span>
 
         {/* Hamburger Menu */}
         <div className="md:hidden  absolute top-6 right-4 z-50">
