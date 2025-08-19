@@ -2,7 +2,7 @@ import { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-const ChangePassword = ({ username }) => {
+const ChangePassword = ({ username: propUsername }) => {
   const [formData, setFormData] = useState({
     oldPassword: "",
     newPassword: "",
@@ -10,6 +10,13 @@ const ChangePassword = ({ username }) => {
   });
   const [loading, setLoading] = useState(false);
   const [validationErrors, setValidationErrors] = useState({});
+  
+  // Get username from prop, localStorage, or set a default
+  const username = propUsername || 
+                   localStorage.getItem('username') || 
+                   localStorage.getItem('currentUser') || 
+                   sessionStorage.getItem('username') ||
+                   'admin'; // fallback default
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -43,6 +50,12 @@ const ChangePassword = ({ username }) => {
   const validateForm = () => {
     const errors = {};
     let isValid = true;
+
+    // Check if username is available
+    if (!username || username.trim() === '') {
+      toast.error("Username is required for password change");
+      return false;
+    }
 
     if (!formData.oldPassword.trim()) {
       errors.oldPassword = "Current password is required";
@@ -195,9 +208,6 @@ const handleSubmit = async (e) => {
               <li className={hasSpecialChar(formData.newPassword) ? "text-green-500" : ""}>
                 At least one special character
               </li>
-              {/* <li className={formData.newPassword && formData.newPassword !== formData.oldPassword ? "text-green-500" : ""}>
-                Different from current password
-              </li> */}
             </ul>
           </div>
         </div>
@@ -224,9 +234,9 @@ const handleSubmit = async (e) => {
         
         <button
           type="submit"
-          disabled={loading}
+          disabled={loading || !username || username.trim() === ''}
           className={`w-full py-2 px-4 rounded-md text-white font-medium focus:outline-none focus:ring-2 focus:ring-offset-2 ${
-            loading
+            loading || !username || username.trim() === ''
               ? "bg-blue-400 cursor-not-allowed"
               : "bg-blue-600 hover:bg-blue-700 focus:ring-blue-500"
           }`}
