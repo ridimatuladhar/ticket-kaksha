@@ -74,7 +74,7 @@ const Nav = () => {
     rounded-b-4xl bg-[#DCE9F5] z-50 px-2`}
         >
           <img
-            src="/src/assets/navlogo/ticketkakshalogo.png"
+            src="/src/assets/navlogo/ticketkakshalogo.webp"
             alt="logo"
             className="w-full h-full object-contain transition-transform duration-700 hover:scale-105"
             title="Ticket Kaksha Logo"

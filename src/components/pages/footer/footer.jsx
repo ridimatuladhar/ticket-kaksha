@@ -15,7 +15,7 @@ const Footer = () => {
       <div
         className="pt-70 sm:pt-48 pb-10 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: "url('/src/assets/footer/footerimage.png')",
+          backgroundImage: "url('/src/assets/footer/footerimage.webp')",
         }}
       >
         <div className="container mx-auto px-4">

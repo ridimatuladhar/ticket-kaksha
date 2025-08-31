@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { MdTravelExplore } from 'react-icons/md';
 
-//const API_URL = "http://localhost/TICKETKAKSHA/Backend/destination/get_destinations.php";
+// const API_URL = "http://localhost/TICKETKAKSHA/Backend/destination/get_destinations.php";
 const API_URL = "https://ticketkaksha.com.np/Backend/destination/get_destinations.php";
 
 const DestinationCard = ({ title, description, image, index }) => (

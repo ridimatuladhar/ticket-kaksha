@@ -2,12 +2,12 @@ import React from "react";
 
 // Airline data with actual logos
 const airlines = [
-  { name: "Emirates", src: "/src/assets/airlines/emirates.png" },
-  { name: "China Southern", src: "/src/assets/airlines/china.png" },
-  { name: "Singapore Airlines", src: "/src/assets/airlines/singapore.png" },
-  { name: "Qatar Airways", src: "/src/assets/airlines/qatar.png" },
-  { name: "Turkish Airlines", src: "/src/assets/airlines/turkish.png" },
-  { name: "Korean Air", src: "/src/assets/airlines/korean.png" }
+  { name: "Emirates", src: "/src/assets/airlines/emirates.webp" },
+  { name: "China Southern", src: "/src/assets/airlines/china.webp" },
+  { name: "Singapore Airlines", src: "/src/assets/airlines/singapore.webp" },
+  { name: "Qatar Airways", src: "/src/assets/airlines/qatar.webp" },
+  { name: "Turkish Airlines", src: "/src/assets/airlines/turkish.webp" },
+  { name: "Korean Air", src: "/src/assets/airlines/korean.webp" }
 ];
 
 const InfiniteMarquee = ({ children, speed = 60 }) => {

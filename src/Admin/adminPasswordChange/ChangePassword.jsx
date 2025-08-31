@@ -11,7 +11,6 @@ const ChangePassword = ({ username: propUsername }) => {
   const [loading, setLoading] = useState(false);
   const [validationErrors, setValidationErrors] = useState({});
   
-  // Get username from prop, localStorage, or set a default
   const username = propUsername || 
                    localStorage.getItem('username') || 
                    localStorage.getItem('currentUser') || 
@@ -117,7 +116,6 @@ const handleSubmit = async (e) => {
 
       const data = await response.json();
 
-      // ✅ Use backend status to decide success/error
       if (data.status === "success") {
         toast.success(data.message || "Password changed successfully", {
           autoClose: 3000,

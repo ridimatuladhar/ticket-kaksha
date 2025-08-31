@@ -13,8 +13,8 @@ const AdminAboutUs = () => {
 
 
 
-//  const backendBase = "http://localhost/TICKETKAKSHA/Backend/aboutus";
-   const backendBase = "https://ticketkaksha.com.np/Backend/aboutus";
+ const backendBase = "http://localhost/TICKETKAKSHA/Backend/aboutus";
+  //  const backendBase = "https://ticketkaksha.com.np/Backend/aboutus";
 
 
 
@@ -154,7 +154,7 @@ const handleFileChange = (e) => {
   }
 
   if (file) {
-    const allowedTypes = ["image/jpeg", "image/jpg", "image/png", "image/gif"];
+    const allowedTypes = ["image/jpeg", "image/jpg", "image/png", "image/gif" , "image/webp"];
     if (!allowedTypes.includes(file.type)) {
       showMessage("Only JPEG, PNG, and GIF files are allowed", "error", "image");
       setNewImage(null);
@@ -264,7 +264,7 @@ const handleFileChange = (e) => {
           </label>
           <input
             type="file"
-            accept="image/jpeg,image/jpg,image/png,image/gif"
+            accept="image/jpeg,image/jpg,image/png,image/gif,image/webp"
             onChange={handleFileChange}
             className="mb-2 block w-full text-sm text-gray-500
           file:mr-4 file:py-2 file:px-4 file:rounded file:border-0
@@ -303,8 +303,8 @@ const handleFileChange = (e) => {
                 className="relative w-40 h-40 rounded overflow-hidden shadow-sm"
               >
                 <img
-                  //src={`http://localhost/TICKETKAKSHA/Backend/aboutus/${img}`}
-                   src={`https://ticketkaksha.com.np/Backend/aboutus/${img}`}
+                  src={`http://localhost/TICKETKAKSHA/Backend/aboutus/${img}`}
+                  //  src={`https://ticketkaksha.com.np/Backend/aboutus/${img}`}
                   alt={`About Us Image ${index + 1}`}
                   className="w-full h-full object-cover"
 

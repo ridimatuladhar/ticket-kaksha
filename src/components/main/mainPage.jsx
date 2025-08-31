@@ -119,49 +119,49 @@ const TravelAnimation = () => {
   const imageConfigs = [
     { 
       name: 'Swoyambhu', 
-      src: '/src/assets/main/kaksh_bg12.png',
+      src: '/src/assets/main/kaksh_bg12.webp',
       width: '300px',
       height: '350px'
     },
     { 
       name: 'Dubai Frame', 
-      src: '/src/assets/main/kaksh_bg8.png',
+      src: '/src/assets/main/kaksh_bg8.webp',
       width: '300px',
       height: '300px'
     },
     { 
       name: 'Bali Gate', 
-      src: '/src/assets/main/kaksh_bg11.png',
+      src: '/src/assets/main/kaksh_bg11.webp',
       width: '300px',
       height: '360px'
     },
     { 
       name: 'Taj Mahal', 
-            src: '/src/assets/main/kaksh_bg9.png',
+            src: '/src/assets/main/kaksh_bg9.webp',
       width: '300px',
       height: '230px'
     },
     { 
       name: 'Sydney Opera', 
-      src: '/src/assets/main/kaksh_bg7.png',
+      src: '/src/assets/main/kaksh_bg7.webp',
       width: '300px',
       height: '230px'
     },
     { 
       name: 'Burj Al Arab', 
-      src: '/src/assets/main/kaksh_bg13.png',
+      src: '/src/assets/main/kaksh_bg13.webp',
       width: '300px',
       height: '290px'
     },
     { 
       name: 'Romania Castle', 
-      src: '/src/assets/main/kaksh_bg6.png',
+      src: '/src/assets/main/kaksh_bg6.webp',
       width: '300px',
       height: '230px'
     },
     { 
       name: 'Eiffel Tower', 
-      src: '/src/assets/main/kaksh_bg15.png',
+      src: '/src/assets/main/kaksh_bg15.webp',
       width: '300px',
       height: '350px'
     }
