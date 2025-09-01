@@ -133,7 +133,7 @@ const Footer = () => {
               title="Visit GR8 Nepal"
             >
               <img
-                src="/src/assets/footerlogo/GR8-Nepal-Private-Limited-Logo.png"
+                src="/src/assets/footerlogo/GR8-Nepal-Private-Limited-Logo.webp"
                 alt="GR8 Nepal Logo"
                 className="h-10 w-10 object-contain mx-auto opacity-80 hover:opacity-100 transition-opacity"
                 title="Visit GR8 Nepal"
